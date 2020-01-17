@@ -1,0 +1,15 @@
+{
+  "name": "sass-demo",
+  "version": "0.0.1",
+  "description": "SASS (Syntactically Awesome Style Sheets) Demo",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "cssnano": "^4.1.10",
+    "grunt": "^1.0.4",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-dart-sass": "^1.1.3",
+    "grunt-postcss": "^0.9.0"
+  },
+  "dependencies": {}
+}

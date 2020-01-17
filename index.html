@@ -1,0 +1,190 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SASS Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="stylesheet" href="dist/css/sass-demo.css">
+  </head>
+
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">        
+        <a class="navbar-item" href="/">
+          <img src="https://zurigroup.com/wp-content/uploads/2017/12/logo_2018.png">
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Donate</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <h1 class="title">Syntactically Awesome Style Sheets (SASS)</h1>
+
+          <h2>What is SASS?</h2>
+          <p><a href="https://sass-lang.com/">SASS (Syntactically&nbsp;Awesome&nbsp;Stylesheets)</a>&nbsp;is a&nbsp;CSS pre-processor&nbsp;that lets you&nbsp;use variables, mathematical operations, mixins, loops, functions, imports, and other functionalities that super powers your CSS.
+                        
+          <h2>You can use variables.</h2>
+          <p>A variable allows you to store a values and to reuse the variables whereever you want in you SCSS</p>
+          <pre class="jquery">
+$blue: #255271;
+$orange: #ffa500;
+
+$primary: <mark>$blue;</mark>
+$secondary: <mark>$orange;</mark>
+
+$content-heading-color: $secondary;
+$link: $secondary;
+          </pre>
+          <p>Now you can use the color variable to style elements.</p>
+          <pre>
+h1, h2, h3, h4, h5, h6 {
+  &nbsp; color: $content-heading-color;
+}            
+
+.button {
+  &nbsp; background-color: $primary;
+}
+
+a {
+  &nbsp; color: $link-color;
+}
+          </pre>
+          <p>Let's reverse the colors.</p>
+          <pre class="jquery">
+$blue: #255271;
+$orange: #ffa500;
+
+$primary: <mark>$orange;</mark>
+$secondary: <mark>$blue;</mark>
+
+$content-heading-color: $secondary;
+$link: $secondary;
+          </pre>
+
+          <h2>You can nest style rules.</h2>
+          <pre class="jquery">
+.content {
+  display: block;
+
+  p {
+    margin-top: 1rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+          </pre>
+          <p>This will compile into:</p>
+          <pre class="jquery">
+.content {
+  display: block;
+}
+
+.content p {
+  margin-top: 1rem;
+}
+
+.content ul {
+  list-style: none;
+}
+          </pre>
+          <h2>You can use mixins.</h2>
+          <pre class="jquery">
+@mixin button($background: <mark>$primary</mark>, $color: <mark>$light</mark>) {
+  background-color: $background;
+  color: $color;
+};
+          </pre>
+          <p>Include the mixin wherever you want.</p>
+          <pre class="jquery">
+.content {
+  .button {
+    <mark>@include button($purple, $yellow);</mark>
+  }
+}
+          </pre>
+          <p>This will compile into:</p>
+          <pre class="jquery">
+.content .button {
+  background-color: #800080;
+  color: #ff0000;
+}
+          </pre>
+          <p><button class="button is-large is-primary">My Button</button></p>
+
+          <h2>You can use <a href="https://sass-lang.com/documentation/modules">built-in functions</a>.</h2>
+          <pre class="jquery">
+.content {
+  .button {
+    @include button(<mark>darken($purple, 10%)</mark>, $yellow);
+  }
+}
+          </pre>
+          <p>This will compile into:</p>
+          <pre class="jquery">
+.content .button {
+  background-color: #4d004d;
+  color: #ffff00;
+}
+          </pre>
+          <p><button class="button is-large is-primary">My Button</button></p>
+          <h2>You can use partials.</h2>
+          <pre class="jquery">
+@import "partials/functions";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/base/all";
+@import "partials/components/all";
+@import "partials/controls";
+@import "partials/button";
+@import "partials/container";
+@import "partials/columns";
+@import "partials/section";
+@import "partials/content";
+@import "partials/title";
+@import "partials/form/all";
+@import "partials/footer";
+</pre>
+
+          <h2><a href="https://sass-lang.com">sass-lang.com</a></h2>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Syntactically Awesome Style Sheets (SASS)</strong></a>.
+          </p>
+        </div>
+      </footer>
+
+    </body>
+
+  </html>
